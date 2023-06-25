@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo.png";
@@ -11,7 +12,6 @@ const Header = () => {
     <div className="px-[15%] py-4 m-0 flex justify-between items-center">
       <div className="h-14 flex justify-between items-end">
         <Title />
-        <p>Delhi, India</p>
       </div>
       <div className="w-2/5 flex justify-between items-center">
         <p className="text-xl">

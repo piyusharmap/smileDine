@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDrumstickBite, faCarrot } from "@fortawesome/free-solid-svg-icons";
+import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import { IMG_CDN_URL } from "../../config";
 
 const RestaurantCard = ({ restaurant }) => {
@@ -10,6 +10,7 @@ const RestaurantCard = ({ restaurant }) => {
     costForTwo,
     veg,
     avgRating,
+    totalRatings,
     lastMileTravelString,
   } = restaurant;
 
@@ -21,12 +22,15 @@ const RestaurantCard = ({ restaurant }) => {
       <p>{costForTwo / 100}</p>
       <p>
         {veg ? (
-          <FontAwesomeIcon className=" text-green-600" icon={faCarrot} />
+          <FontAwesomeIcon className=" text-green-600" icon={faCircle} />
         ) : (
-          <FontAwesomeIcon className=" text-red-600" icon={faDrumstickBite} />
+          <FontAwesomeIcon className=" text-red-600" icon={faCircle} />
         )}
       </p>
-      <p>{avgRating}</p>
+      <p>
+        <FontAwesomeIcon icon={faStar} />
+        {avgRating + "( " + totalRatings + " )"}
+      </p>
       <p>{lastMileTravelString}</p>
     </div>
   );
