@@ -14,6 +14,7 @@ import Body from "./components/ui/Body";
 import Footer from "./components/ui/Footer";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/ui/RestaurantMenu";
+import Login from "./components/ui/Login";
 
 const AppLayout = () => {
   return (
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
     ],
+  },
+  {
+    path: "/user/signin",
+    element: <Login />,
   },
 ]);
 

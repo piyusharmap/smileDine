@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRouteError } from "react-router-dom";
 
 const Error = () => {
@@ -6,9 +5,9 @@ const Error = () => {
   const { status, statusText } = error;
 
   return (
-    <div>
-      <h1>{status}</h1>
-      <p>{statusText}</p>
+    <div className="h-screen w-screen flex flex-col justify-center items-center gap-4">
+      <h1 className="text-9xl font-primary text-primary">{status}</h1>
+      <p className="text-3xl font-secondary text-dark">{statusText}</p>
     </div>
   );
 };

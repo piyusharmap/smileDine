@@ -14,6 +14,15 @@ module.exports = {
         dark: "#231942",
         light: "#be95c4",
       },
+      keyframes: {
+        flicker: {
+          "0%, 100%": { opacity: ".5" },
+          "50%": { opacity: ".2" },
+        },
+      },
+      animation: {
+        flicker: "flicker 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

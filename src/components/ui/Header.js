@@ -14,14 +14,16 @@ const Title = () => {
 
 const Header = () => {
   return (
-    <div className="px-[10%] py-2 m-0 flex justify-between items-center border-b-4 border-primary border-solid">
+    <div className="px-[10%] py-2 m-0 flex justify-between items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
       <div className="w-1/4 flex justify-between items-center">
-        <p className="text-lg font-primary hover:font-bold">
-          <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
-          Sign In
-        </p>
+        <Link to="/user/signin">
+          <p className="text-light font-primary font-bold hover:text-dark">
+            <FontAwesomeIcon className="mr-2" icon={faArrowRightToBracket} />
+            Sign In
+          </p>
+        </Link>
         <Link to="/">
-          <p className="text-lg font-primary hover:font-bold">
+          <p className="text-light font-primary font-bold hover:text-dark">
             <FontAwesomeIcon className="mr-2" icon={faMagnifyingGlass} />
             Search
           </p>
@@ -31,15 +33,21 @@ const Header = () => {
         <Title />
       </div>
       <div className="w-1/4 flex justify-between items-center">
-        <p className="text-lg font-primary hover:font-bold">
-          <FontAwesomeIcon className="mr-2" icon={faQuestion} />
-          Help
-        </p>
-        <p className="text-lg font-primary hover:font-bold">
-          <FontAwesomeIcon className="mr-2" icon={faBagShopping} />
-          Order
-          <span className="p-1 text-secondary underline">10</span>
-        </p>
+        <Link to="/help">
+          <p className="text-light font-primary font-bold hover:text-dark">
+            <FontAwesomeIcon className="mr-2" icon={faQuestion} />
+            Help
+          </p>
+        </Link>
+        <div className="flex justify-center items-center gap-2">
+          <p className="text-light font-primary font-bold hover:text-dark">
+            <FontAwesomeIcon className="mr-2" icon={faBagShopping} />
+            Order
+          </p>
+          <span className="font-extrabold text-lg text-dark font-primary">
+            0
+          </span>
+        </div>
       </div>
     </div>
   );

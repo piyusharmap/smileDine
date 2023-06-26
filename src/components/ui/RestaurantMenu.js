@@ -5,15 +5,16 @@ import useRestaurantMenu from "../../hooks/useRestaurantMenu";
 import useRestaurantOffer from "../../hooks/useRestaurantOffer";
 import OfferCard from "./OfferCard";
 import MenuItem from "./MenuItem";
+import MenuShimmer from "../MenuShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const { restaurantInfo, menuInfo } = useRestaurantMenu(id);
   const offers = useRestaurantOffer(id);
 
-  if (!restaurantInfo) return <h1>Shimmer</h1>;
-
-  return (
+  return !restaurantInfo ? (
+    <MenuShimmer />
+  ) : (
     <div className="px-[10%] py-4 mt-4 flex justify-between items-start gap-8">
       <div className="w-2/5">
         <h1 className="pt-2 font-bold font-primary text-2xl">
