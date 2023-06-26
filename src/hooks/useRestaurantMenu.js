@@ -7,7 +7,7 @@ const useResaurantMenu = (resId) => {
 
   useEffect(() => {
     getRestaurantInfo();
-  });
+  }, []);
 
   const getRestaurantInfo = async () => {
     try {

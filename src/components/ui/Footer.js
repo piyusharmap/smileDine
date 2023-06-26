@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import AppStore from "../../assets/AppStore.webp";
 import PlayStore from "../../assets/PlayStore.webp";
 

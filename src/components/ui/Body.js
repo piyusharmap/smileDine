@@ -9,6 +9,7 @@ import { filterData } from "../../utils/utils";
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [totalRestaurants, setTotalRestaurants] = useState(0);
   const [searchText, setSearchText] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -23,10 +24,12 @@ const Body = () => {
 
       setAllRestaurants(json?.data?.cards[0]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[0]?.data?.data?.cards);
+      setTotalRestaurants(json?.data?.cards[0]?.data?.data?.totalRestaurants);
     } catch (err) {
       console.log(err);
       setAllRestaurants([]);
       setFilteredRestaurants([]);
+      setTotalRestaurants(0);
     }
   };
 
@@ -63,7 +66,7 @@ const Body = () => {
         </button>
       </div>
       <p className="h-fit w-full p-2 text-2xl font-primary font-bold border-b-solid border-b-[1px] border-b-darkShade">
-        {filteredRestaurants.length + " restaurants"}
+        {totalRestaurants + " restaurants"}
       </p>
       {errorMsg === "" ? null : (
         <h1 className="font-secondary font-bold p-2">{errorMsg}</h1>
