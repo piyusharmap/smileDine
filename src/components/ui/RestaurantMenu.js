@@ -25,10 +25,7 @@ const RestaurantMenu = () => {
         <p>{restaurantInfo?.cuisines.join(", ")}</p>
         <p>
           <FontAwesomeIcon icon={faStar} />
-          {restaurantInfo?.avgRating +
-            "( " +
-            restaurantInfo?.totalRatings +
-            " )"}
+          {restaurantInfo?.avgRating + "(" + restaurantInfo?.totalRatings + ")"}
         </p>
         <p>{restaurantInfo?.isOpen}</p>
       </div>
@@ -51,9 +48,9 @@ const RestaurantMenu = () => {
               <p>
                 {menuInfo?.ratings
                   ? menuItemInfo?.ratings?.aggregateRating?.rating +
-                    "( " +
+                    "(" +
                     menuItemInfo?.ratings?.aggregateRating?.ratingCount +
-                    " )"
+                    ")"
                   : "--"}
               </p>
             </div>
