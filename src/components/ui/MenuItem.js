@@ -7,7 +7,7 @@ const MenuItem = (props) => {
   const { info } = props;
 
   return (
-    <div className="mt-4 p-2 w-full flex justify-around items-center border-b-[1px] border-dark hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:border-none">
+    <div className="mt-4 p-2 w-full flex justify-around items-center hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
       <div className="w-1/2">
         <h1 className="font-bold font-secondary text-lg">{info?.name}</h1>
         <p className="mt-1 font-secondary font-bold text-sm">

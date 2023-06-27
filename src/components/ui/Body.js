@@ -7,6 +7,7 @@ import RestaurantCard from "./RestaurantCard";
 import { filterData } from "../../utils/utils";
 import BodyShimmer from "../BodyShimmer";
 import CartPopup from "../CartPopup";
+import BackgroundLg from "../../assets/BackgroundLg.png";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -18,7 +19,7 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  const cartItems = 0;
+  const cartItems = 1;
 
   const getRestaurants = async () => {
     try {
@@ -52,8 +53,13 @@ const Body = () => {
   if (!allRestaurants) return null;
   return (
     <>
-      <div className="w-screen h-40 relative flex justify-center items-center bg-light shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-        <h1 className="text-4xl text-dark font-primary font-bold">
+      <div className="h-40 bg relative flex justify-center items-center bg-accent shadow-[0_3px_10px_rgb(0,0,0,0.2)] overflow-hidden">
+        <img
+          className="object-fill absolute top-0 opacity-60"
+          src={BackgroundLg}
+          alt="Background banner"
+        />
+        <h1 className="text-5xl text-white font-primary font-bold drop-shadow-lg z-10">
           Grab 50% OFF & Free Delivery on your FIRST order.
         </h1>
       </div>
@@ -73,12 +79,15 @@ const Body = () => {
             <FontAwesomeIcon className="m-auto text-lg" icon={faSearch} />
           </button>
         </div>
+
         <p className="h-fit w-full p-2 text-right text-3xl text-dark font-secondary font-extrabold border-b-solid border-b-[1px] border-primary">
           {filteredRestaurants.length + " restaurants"}
         </p>
+
         {errorMsg === "" ? null : (
           <h1 className="font-secondary font-bold p-2">{errorMsg}</h1>
         )}
+
         <div className="min-h-screen p-4 flex flex-wrap justify-around gap-4">
           {filteredRestaurants.length === 0 ? (
             <BodyShimmer />

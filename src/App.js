@@ -2,19 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
-/**
- * - Header
- *    - LogoText
- *    - Help
- *    - Cart
- *    - Sign In
- */
 import Header from "./components/ui/Header";
 import Body from "./components/ui/Body";
 import Footer from "./components/ui/Footer";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/ui/RestaurantMenu";
 import Login from "./components/ui/Login";
+import About from "./components/ui/About";
+import Order from "./components/ui/Order";
 
 const AppLayout = () => {
   return (
@@ -37,12 +32,16 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/help",
-        element: <h1>Help section</h1>,
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/user/order",
+        element: <Order />,
       },
     ],
   },

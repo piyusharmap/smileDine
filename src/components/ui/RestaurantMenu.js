@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faMapPin,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../hooks/useRestaurantMenu";
 import useRestaurantOffer from "../../hooks/useRestaurantOffer";
@@ -56,10 +60,15 @@ const RestaurantMenu = () => {
           )}
         </div>
       </div>
-      <div className="p-4 w-full flex flex-col">
-        <h1 className="pb-4 text-center text-2xl font-primary font-bold text-dark border-b-[1px] border-dark border-dashed">
+
+      <div className="p-4 w-full flex flex-col border-[1px] border-dark rounded-lg">
+        <h1 className="my-2 py-8 text-center text-2xl font-primary font-bold text-dark border-b-[1px] border-dark border-dashed">
+          <FontAwesomeIcon className="mr-2" icon={faUtensils} />
           Menu
         </h1>
+        <p className="p-2 font-primary font-bold text-center">
+          Total items: {menuInfo ? menuInfo.length : 0}
+        </p>
         {menuInfo.map((menuItem, index) => {
           const menuItemInfo = menuItem?.card?.info;
           return <MenuItem key={index} info={menuItemInfo} />;
