@@ -5,10 +5,12 @@ import {
   faUser,
   faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
-import LogoDark from "../../assets/LogoDark.png";
+
 import { Link } from "react-router-dom";
-import store from "../../utils/store";
 import { useSelector } from "react-redux";
+import store from "../../utils/store";
+
+import LogoDark from "../../assets/LogoDark.png";
 
 const Title = () => {
   return (

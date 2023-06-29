@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Footer from "./Footer";
+
 import LogoLight from "../../assets/LogoLight.png";
 
 const Login = () => {
@@ -21,7 +23,10 @@ const Login = () => {
             onClick={() => setIsUser(!isUser)}
             className="font-bold font-secondary text-sm cursor-pointer"
           >
-            {isUser ? "or create an account" : "or Login to your account"}
+            or{" "}
+            <span className="text-dark hover:text-primary">
+              {isUser ? " create an account" : " Login to your account"}
+            </span>
           </p>
           <p className="mt-8 p-2 font-secondary font-bold text-sm text-primary">
             You can go to main page to view more restaurants

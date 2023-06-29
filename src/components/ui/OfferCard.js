@@ -10,6 +10,7 @@ const OfferCard = (props) => {
         <FontAwesomeIcon className="mr-2" icon={faTag} />
         {info.header}
       </h1>
+
       <div className="mt-2 flex">
         <p className="w-fit p-1 mx-auto font-primary font-bold text-sm text-dark">
           {info.couponCode}

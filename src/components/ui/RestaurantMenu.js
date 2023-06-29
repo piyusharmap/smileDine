@@ -4,14 +4,15 @@ import {
   faMapPin,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import useRestaurantMenu from "../../hooks/useRestaurantMenu";
 import useRestaurantOffer from "../../hooks/useRestaurantOffer";
 import OfferCard from "./OfferCard";
 import MenuItem from "./MenuItem";
 import MenuShimmer from "../MenuShimmer";
 import CartPopup from "../CartPopup";
-import { useSelector } from "react-redux";
 
 const RestaurantMenu = () => {
   const { id } = useParams();

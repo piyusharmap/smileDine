@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
-import { IMG_CDN_URL } from "../../config";
-import FoodItem from "../../assets/FoodItem.png";
+
 import { addItem, removeItem } from "../../slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../utils/store";
+
+import { IMG_CDN_URL } from "../../config";
+
+import FoodItem from "../../assets/FoodItem.png";
 
 const MenuItem = (props) => {
   const dispatch = useDispatch();

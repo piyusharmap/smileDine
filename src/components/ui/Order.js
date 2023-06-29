@@ -1,15 +1,18 @@
-import { IMG_CDN_URL } from "../../config";
-import { useDispatch, useSelector } from "react-redux";
-import FoodItem from "../../assets/FoodItem.png";
-import store from "../../utils/store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
+
+import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../slices/cartSlice";
 import { Link } from "react-router-dom";
+import store from "../../utils/store";
+
+import { IMG_CDN_URL } from "../../config";
+
+import FoodItem from "../../assets/FoodItem.png";
 
 const CartItem = ({ item }) => {
   return (
-    <div className="mt-2 w-full py-2 px-4 flex justify-between items-center gap-4">
+    <div className="w-full py-2 px-4 flex justify-between items-center gap-4">
       <p className="whitespace-wrap overflow-y-clip font-secondary text-dark text-sm">
         {item.itemName.slice(0, 25) + "..."}
         <span className="ml-2 font-primary text-sm">({item.itemCount})</span>
@@ -76,25 +79,33 @@ const Order = () => {
       )}
       <div className="px-[10%] h-min-screen p-4 flex justify-between items-start gap-8">
         <div className="w-2/5 flex flex-col justify-center items-center">
-          <h1 className="w-full p-4 font-bold font-primary text-2xl border-b-[1px] border-dark border-dashed">
+          <h1 className="my-2 w-full p-4 font-bold font-primary text-2xl">
             Your Order
           </h1>
-          {cartItems.length > 0 ? (
-            cartItems.map((item) => {
-              return <CartItem item={item} key={item.itemId} />;
-            })
-          ) : (
-            <h1 className="w-full p-4 font-bold font-primary text-center text-red-600">
-              No items in cart
-            </h1>
-          )}
-          <div className="w-full p-4 flex justify-center items-center border-t-[1px] border-dark border-dashed">
+          <div className="w-full border-t-[1px] border-b-[1px] border-dark border-dashed">
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => {
+                return <CartItem item={item} key={item.itemId} />;
+              })
+            ) : (
+              <h1 className="w-full p-4 font-bold font-primary text-center text-red-600">
+                No items in cart
+              </h1>
+            )}
+          </div>
+
+          <input
+            className="mt-2 w-full p-2 font-bold font-primary text-center uppercase text-primary focus:outline-none"
+            placeholder="APPLY OFFER"
+          />
+
+          <div className="w-full p-2 flex justify-center items-center">
             <p className="w-4/5 p-2 font-primary text-primary text-right">
               Grand Total:{" "}
             </p>
             <p className="p-2 font-primary text-primary">₹{cartPrice}</p>
           </div>
-          <button className="mt-2 w-full py-2  font-secondary font-bold text-xl text-white bg-primary hover:opacity-80">
+          <button className="w-full py-2  font-secondary font-bold text-xl text-white bg-primary hover:opacity-80">
             <FontAwesomeIcon className="mr-2" icon={faCreditCard} />
             CHECKOUT
           </button>

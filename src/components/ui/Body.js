@@ -1,15 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RESTAURANTS_API_URL } from "../../config";
+import { useSelector } from "react-redux";
+
 import RestaurantCard from "./RestaurantCard";
-import { filterData } from "../../utils/utils";
 import BodyShimmer from "../BodyShimmer";
 import CartPopup from "../CartPopup";
-import BackgroundLg from "../../assets/BackgroundLg.png";
+import { filterData } from "../../utils/utils";
 import store from "../../utils/store";
-import { useSelector } from "react-redux";
+import { RESTAURANTS_API_URL } from "../../config";
+
+import BackgroundLg from "../../assets/BackgroundLg.png";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -19,6 +22,7 @@ const Body = () => {
   const cartItems = useSelector((store) => store.cart.cartItems);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getRestaurants();
   }, []);
 

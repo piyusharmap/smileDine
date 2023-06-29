@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEgg, faCarrot, faStar } from "@fortawesome/free-solid-svg-icons";
-import { IMG_CDN_URL } from "../../config";
+
 import FoodItem from "../../assets/FoodItem.png";
+import { IMG_CDN_URL } from "../../config";
 
 const RestaurantCard = ({ restaurant }) => {
   const {

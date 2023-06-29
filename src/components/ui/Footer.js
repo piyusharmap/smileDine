@@ -1,8 +1,9 @@
 import AppStore from "../../assets/AppStore.webp";
 import PlayStore from "../../assets/PlayStore.webp";
 
-import LogoLight from "../../assets/LogoLight.png";
 import ToTop from "../ToTop";
+
+import LogoLight from "../../assets/LogoLight.png";
 
 const Footer = () => {
   return (
@@ -19,6 +20,7 @@ const Footer = () => {
           Order food from your nearby favourite restaurants.
         </p>
       </div>
+
       <div className="w-1/2 flex justify-between gap-2">
         <ul>
           <li className="mb-4 font-bold text-lg font-secondary text-light">
@@ -78,6 +80,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+
       <div className="py-4 flex gap-4">
         <img className="h-12 cursor-pointer" src={PlayStore} />
         <img className="h-12 cursor-pointer" src={AppStore} />
