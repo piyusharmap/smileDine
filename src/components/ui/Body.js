@@ -8,18 +8,19 @@ import { filterData } from "../../utils/utils";
 import BodyShimmer from "../BodyShimmer";
 import CartPopup from "../CartPopup";
 import BackgroundLg from "../../assets/BackgroundLg.png";
+import store from "../../utils/store";
+import { useSelector } from "react-redux";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const cartItems = useSelector((store) => store.cart.cartItems);
 
   useEffect(() => {
     getRestaurants();
   }, []);
-
-  const cartItems = 1;
 
   const getRestaurants = async () => {
     try {
@@ -53,13 +54,13 @@ const Body = () => {
   if (!allRestaurants) return null;
   return (
     <>
-      <div className="h-40 bg relative flex justify-center items-center bg-accent shadow-[0_3px_10px_rgb(0,0,0,0.2)] overflow-hidden">
+      <div className="h-40 bg relative flex justify-center items-center bg-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)] overflow-hidden">
         <img
           className="object-fill absolute top-0 opacity-60"
           src={BackgroundLg}
           alt="Background banner"
         />
-        <h1 className="text-5xl text-white font-primary font-bold drop-shadow-lg z-10">
+        <h1 className="text-5xl text-white font-primary font-bold drop-shadow-xl z-10">
           Grab 50% OFF & Free Delivery on your FIRST order.
         </h1>
       </div>
@@ -104,7 +105,8 @@ const Body = () => {
             })
           )}
         </div>
-        {cartItems > 0 ? <CartPopup /> : null}
+
+        {cartItems.length > 0 ? <CartPopup /> : null}
       </div>
     </>
   );

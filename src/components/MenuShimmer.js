@@ -19,7 +19,7 @@ const MenuShimmer = () => {
       </div>
       <div className="w-full flex flex-col gap-2">
         {new Array(MENU_SHIMMER_VALUE).fill(0).map((element, index) => {
-          return <ShimmerCard />;
+          return <ShimmerCard key={index} />;
         })}
       </div>
     </div>

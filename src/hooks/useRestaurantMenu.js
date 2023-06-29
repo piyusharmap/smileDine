@@ -6,6 +6,7 @@ const useResaurantMenu = (resId) => {
   const [menuInfo, setMenuInfo] = useState();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getRestaurantInfo();
   }, []);
 

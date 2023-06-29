@@ -5,6 +5,7 @@ const useRestaurantOffer = (resId) => {
   const [restaurantOffers, setRestaurantOffers] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getOffers();
   }, []);
 

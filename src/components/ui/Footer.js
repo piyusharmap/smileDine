@@ -2,6 +2,7 @@ import AppStore from "../../assets/AppStore.webp";
 import PlayStore from "../../assets/PlayStore.webp";
 
 import LogoLight from "../../assets/LogoLight.png";
+import ToTop from "../ToTop";
 
 const Footer = () => {
   return (
@@ -81,6 +82,7 @@ const Footer = () => {
         <img className="h-12 cursor-pointer" src={PlayStore} />
         <img className="h-12 cursor-pointer" src={AppStore} />
       </div>
+      <ToTop />
     </div>
   );
 };

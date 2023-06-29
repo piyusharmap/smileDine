@@ -2,9 +2,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 import { IMG_CDN_URL } from "../../config";
 import FoodItem from "../../assets/FoodItem.png";
+import { addItem, removeItem } from "../../slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import store from "../../utils/store";
 
 const MenuItem = (props) => {
-  const { info } = props;
+  const dispatch = useDispatch();
+  const { info, restaurantName, resId } = props;
+  const cartItems = useSelector((store) => store.cart.cartItems);
+
+  const itemInfo = {
+    itemRestaurantId: resId,
+    itemRestaurant: restaurantName,
+    itemId: info?.id,
+    itemName: info?.name,
+    itemPrice: info?.price / 100,
+    itemImage: info?.imageId,
+  };
+
+  const handleAddItem = () => {
+    dispatch(addItem(itemInfo));
+  };
+
+  const handleRemoveItem = (x) => {
+    dispatch(removeItem(itemInfo.itemId));
+  };
 
   return (
     <div className="mt-4 p-2 w-full flex justify-around items-center hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
@@ -27,20 +49,26 @@ const MenuItem = (props) => {
             : "--"}
         </p>
       </div>
+
       <img
         className="h-20 w-28"
         src={info?.imageId ? IMG_CDN_URL + info?.imageId : FoodItem}
         alt="Menu item"
       />
+
       <div className="flex justify-between items-center gap-2">
-        <button>
+        <button onClick={() => handleAddItem()}>
           <FontAwesomeIcon
             className="m-1 font-primary font-bold text-dark text-sm hover:text-light"
             icon={faPlus}
           />
         </button>
-        <button className="font-primary font-bold text-lg">0</button>
-        <button>
+
+        <p className="font-primary font-bold text-lg">
+          {cartItems.find((item) => item.itemId === info?.id)?.itemCount}
+        </p>
+
+        <button onClick={() => handleRemoveItem()}>
           <FontAwesomeIcon
             className="m-1 font-primary font-bold text-dark text-sm hover:text-light"
             icon={faMinus}

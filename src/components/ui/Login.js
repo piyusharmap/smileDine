@@ -32,11 +32,11 @@ const Login = () => {
             </button>
           </Link>
         </div>
+
         <div className="h-full w-full flex justify-center items-center">
           {isUser ? (
             <div className="w-1/2 p-4 flex flex-col justify-center items-center">
               <input
-                type="email"
                 className="w-full h-14 p-2 border-[1px] font-secondary text-lg border-light focus:outline-none"
                 placeholder="Phone number"
               />

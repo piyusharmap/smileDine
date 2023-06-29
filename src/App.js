@@ -10,14 +10,16 @@ import RestaurantMenu from "./components/ui/RestaurantMenu";
 import Login from "./components/ui/Login";
 import About from "./components/ui/About";
 import Order from "./components/ui/Order";
+import store from "./utils/store";
+import { Provider } from "react-redux";
 
 const AppLayout = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </Provider>
   );
 };
 

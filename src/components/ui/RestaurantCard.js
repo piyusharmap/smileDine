@@ -23,7 +23,7 @@ const RestaurantCard = ({ restaurant }) => {
       <img
         className="shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
         src={cloudinaryImageId ? IMG_CDN_URL + cloudinaryImageId : FoodItem}
-        alt="Restaurant Profile"
+        alt="Restaurant Image"
       />
       <h1 className="w-full whitespace-nowrap overflow-x-clip text-ellipsis mt-2 font-bold font-primary text-base">
         {name}
