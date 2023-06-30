@@ -1,4 +1,4 @@
-import { BODY_SHIMMER_VALUE } from "../config";
+import { BODY_SHIMMER_VALUE } from "./../constant";
 
 const ShimmerCard = () => {
   return (

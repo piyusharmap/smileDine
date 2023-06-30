@@ -10,7 +10,7 @@ import BodyShimmer from "../BodyShimmer";
 import CartPopup from "../CartPopup";
 import { filterData } from "../../utils/utils";
 import store from "../../utils/store";
-import { RESTAURANTS_API_URL } from "../../config";
+import { RESTAURANTS_API_URL } from "./../../constant";
 
 import BackgroundLg from "../../assets/BackgroundLg.png";
 

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEgg, faCarrot, faStar } from "@fortawesome/free-solid-svg-icons";
 
 import FoodItem from "../../assets/FoodItem.png";
-import { IMG_CDN_URL } from "../../config";
+import { IMG_CDN_URL } from "./../../constant";
 
 const RestaurantCard = ({ restaurant }) => {
   const {

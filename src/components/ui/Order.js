@@ -6,7 +6,7 @@ import { clearCart } from "../../slices/cartSlice";
 import { Link } from "react-router-dom";
 import store from "../../utils/store";
 
-import { IMG_CDN_URL } from "../../config";
+import { IMG_CDN_URL } from "./../../constant";
 
 import FoodItem from "../../assets/FoodItem.png";
 

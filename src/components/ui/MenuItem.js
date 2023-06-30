@@ -5,7 +5,7 @@ import { addItem, removeItem } from "../../slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../utils/store";
 
-import { IMG_CDN_URL } from "../../config";
+import { IMG_CDN_URL } from "./../../constant";
 
 import FoodItem from "../../assets/FoodItem.png";
 

@@ -1,4 +1,4 @@
-import { MENU_SHIMMER_VALUE } from "../config";
+import { MENU_SHIMMER_VALUE } from "./../constant";
 
 const ShimmerCard = () => {
   return (
