@@ -54,7 +54,7 @@ const MenuItem = (props) => {
       </div>
 
       <img
-        className="h-20 w-28"
+        className="h-20 w-28 rounded-lg"
         src={info?.imageId ? IMG_CDN_URL + info?.imageId : FoodItem}
         alt="Menu item"
       />

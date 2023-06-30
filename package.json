@@ -2,10 +2,10 @@
   "name": "smiledine",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel ./index.html"
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html"
   },
   "author": "Piyush Sharma",
   "license": "ISC",

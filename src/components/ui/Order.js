@@ -42,7 +42,7 @@ const OrderItem = ({ item }) => {
 
       <div className="w-1/4 flex flex-col justify-center items-center gap-2">
         <img
-          className="h-20 w-28"
+          className="h-20 w-28 rounded-lg"
           src={item.itemImage ? IMG_CDN_URL + item.itemImage : FoodItem}
         />
         <p className="font-secondary font-bold text-sm">

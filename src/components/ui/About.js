@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBinoculars,
   faBullseye,
   faFaceSmileWink,
   faSeedling,
@@ -32,7 +31,7 @@ const About = () => {
       </div>
 
       <div className="mt-4 py-4 flex justify-around items-start gap-2">
-        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg">
+        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <FontAwesomeIcon
             className="p-4 text-white text-5xl"
             icon={faBullseye}
@@ -43,7 +42,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg">
+        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <FontAwesomeIcon
             className="p-4 text-white text-5xl"
             icon={faFaceSmileWink}
@@ -54,7 +53,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg">
+        <div className="h-full py-2 px-4 w-1/4 font-primary font-bold bg-secondary flex flex-col justify-around items-center gap-2 rounded-lg hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <FontAwesomeIcon
             className="p-4 text-white text-5xl"
             icon={faSeedling}
@@ -67,8 +66,7 @@ const About = () => {
       </div>
 
       <Link to="/">
-        <h1 className="w-fit mt-8 mx-auto p-4 font-primary text-2xl text-white bg-primary rounded-lg">
-          <FontAwesomeIcon className="mr-4" icon={faBinoculars} />
+        <h1 className="w-fit mt-8 mx-auto p-4 font-primary text-2xl text-white bg-primary rounded-lg hover:bg-white hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:text-primary">
           Explore nearby Restaurants with smileDine
         </h1>
       </Link>
